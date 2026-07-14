@@ -1,4 +1,7 @@
+import Image from "next/image";
+
 import { ImagePlaceholder } from "./image-placeholder";
+import { ProjectMediaGallery } from "./project-media-gallery";
 import { TechnologyTag } from "./technology-tag";
 
 interface ProjectSectionProps {
@@ -11,6 +14,10 @@ interface ProjectSectionProps {
   keyAccomplishments: string[];
   technologies: string[];
   imagePlaceholderLabel: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageContain?: boolean;
+  media?: { kind: "image" | "video"; src: string; alt: string }[];
   reverse?: boolean;
 }
 
@@ -40,6 +47,10 @@ export function ProjectSection({
   keyAccomplishments,
   technologies,
   imagePlaceholderLabel,
+  imageSrc,
+  imageAlt,
+  imageContain = false,
+  media = [],
   reverse = false,
 }: ProjectSectionProps) {
   return (
@@ -63,7 +74,20 @@ export function ProjectSection({
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
         <div className={reverse ? "lg:order-2" : ""}>
-          <ImagePlaceholder label={imagePlaceholderLabel} size="large" />
+          {imageSrc ? (
+            <div className="overflow-hidden rounded-2xl border border-zinc-300/80 bg-zinc-50 shadow-sm">
+              <div className="relative aspect-[16/10] w-full">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt ?? imagePlaceholderLabel}
+                  fill
+                  className={imageContain ? "object-contain" : "object-cover"}
+                />
+              </div>
+            </div>
+          ) : (
+            <ImagePlaceholder label={imagePlaceholderLabel} size="large" />
+          )}
         </div>
 
         <div className={reverse ? "lg:order-1" : ""}>
@@ -80,6 +104,8 @@ export function ProjectSection({
         <BulletList title="Engineering Challenges" items={engineeringChallenges} />
         <BulletList title="Key Accomplishments" items={keyAccomplishments} />
       </div>
+
+      <ProjectMediaGallery items={media} />
     </article>
   );
 }

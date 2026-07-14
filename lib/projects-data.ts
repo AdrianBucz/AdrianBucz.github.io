@@ -26,6 +26,16 @@ export const featuredProjects: FeaturedProjectCaseStudy[] = [
     ],
     technologies: ["SystemVerilog", "Computer Architecture", "Digital Design", "Memory Systems", "RTL"],
     imagePlaceholderLabel: "DRAM Controller Block Diagram",
+    imageSrc: "/images/Screenshot%202025-11-17%20111553.png",
+    imageAlt: "Nonblocking DDR4 DRAM controller project screenshot",
+    imageContain: true,
+    media: [
+      {
+        kind: "image",
+        src: "/images/JPEG%20image%20%284%29.jpeg",
+        alt: "DRAM controller supporting image",
+      },
+    ],
   },
   {
     id: "dual-core-riscv",
@@ -52,6 +62,8 @@ export const featuredProjects: FeaturedProjectCaseStudy[] = [
     ],
     technologies: ["SystemVerilog", "RISC-V", "RTL", "Computer Architecture", "FPGA"],
     imagePlaceholderLabel: "Dual-Core Processor Architecture",
+    imageSrc: "/images/Screenshot%202024-12-07%20171832.png",
+    imageAlt: "Dual-core RISC-V processor project screenshot",
   },
   {
     id: "writeback-instruction-buffer",
@@ -78,6 +90,8 @@ export const featuredProjects: FeaturedProjectCaseStudy[] = [
     ],
     technologies: ["C++", "GEM5", "Computer Architecture", "Microarchitecture Research", "Performance Analysis"],
     imagePlaceholderLabel: "Pipeline Diagram",
+    imageSrc: "/images/Picture1.png",
+    imageAlt: "Waiting Instruction Buffer project screenshot",
   },
 ];
 
@@ -90,6 +104,9 @@ export const starsProjects: StarsProject[] = [
       "This project was completed the summer after my freshman year of college. It is awesome to me because it is the first CPU I contributed to implementing. Additionally, the MOS6502 is what powered some of the earliest Apple computers. Technically, this project was fun becuase the team had an ISA spec sheet and an old top level RTL diagram to start with. We used these resources the implement the 6502 ISA on a CPU with timing true to the original design. The 6502 was originally design with hand drawing techniques and some different technologies for state holding elements. Designing around this old technology was another one of the many cool parts of the project. After being manufactured, this project was successfully set up on a breadboard to demonstate to future STARS students.",
     technologies: ["SystemVerilog", "RTL", "Computer Architecture", "Digital Design", "Cadence Tools"],
     imagePlaceholderLabel: "MOS6502 Architecture Diagram",
+    imageSrc: "/images/Screenshot%202023-06-19%20104011.png",
+    imageAlt: "MOS6502 project screenshot",
+    imageContain: true,
   },
   {
     id: "snake-game",
@@ -99,6 +116,21 @@ export const starsProjects: StarsProject[] = [
       "The snake game project was the first project I mentored as a part of STARS. My role for this project was primarily helping a team of less experienced students sucessfully design and impelment the project. Although, I did the high level RTL design for the screen interface for the game. Given the manufactured board containig the project, users can attach buttons and an LCD screen to the pins and play the snake game on the screen. The game logic was an ASIC implementation that handled different game modes, colors, and high scores.",
     technologies: ["SystemVerilog", "ASIC Design", "VCS", "FPGA"],
     imagePlaceholderLabel: "Snake Game Screenshot",
+    imageSrc: "/images/JPEG%20image.jpeg",
+    imageAlt: "Snake game main project image",
+    imageContain: true,
+    media: [
+      {
+        kind: "image",
+        src: "/images/JPEG%20image%20%281%29.jpeg",
+        alt: "Snake game media image 1",
+      },
+      {
+        kind: "image",
+        src: "/images/JPEG%20image%20%283%29.jpeg",
+        alt: "Snake game media image 2",
+      },
+    ],
   },
   {
     id: "graphing-calculator",
@@ -108,6 +140,9 @@ export const starsProjects: StarsProject[] = [
       "This is another project I mentored for. I gave high level guidance to make sure the project was feasible and answered questions as necessary. The calculator itself was a RISC-V CPU with a keypad and screen interface. Users would type equations into the CPU with a calculator program running. The graph of the equation would then appear on the LCD display.",
     technologies: ["Graphics Hardware", "Assembly Programming", "Digital Logic", "FPGA"],
     imagePlaceholderLabel: "Graphing Calculator Screenshot",
+    imageSrc: "/images/HEIF%20Image%20%282%29.heif",
+    imageAlt: "Graphing calculator main project image",
+    imageContain: true,
   },
   {
     id: "fighting-game",
@@ -117,6 +152,16 @@ export const starsProjects: StarsProject[] = [
       "This team I mentored for developed a two-dimensional fighting game similar to street fighter. The game was running on a RISC-V processor connected to NES controller and VGA interfaces. Given limited main memory space for student projects, the screen interface of this CPU turned into an ASIC particular to the fighting game. This gave us the ability to run the game logic on the CPU without pressuring the memory with excessive graphics data. ",
     technologies: ["ASIC", "Digital Design", "FPGA", "Assembly Programming"],
     imagePlaceholderLabel: "Fighting Game Screenshot",
+    imageSrc: "/images/IMG_0665.jpeg",
+    imageAlt: "Fighting game supporting image",
+    imageContain: true,
+    media: [
+      {
+        kind: "video",
+        src: "/images/MPEG-4%20movie.mp4",
+        alt: "Fighting game demo video",
+      },
+    ],
   },
 ];
 

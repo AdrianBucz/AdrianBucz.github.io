@@ -18,6 +18,10 @@ export interface FeaturedProjectCaseStudy {
   keyAccomplishments: string[];
   technologies: string[];
   imagePlaceholderLabel: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageContain?: boolean;
+  media?: ProjectMedia[];
 }
 
 export interface StarsProject {
@@ -27,4 +31,14 @@ export interface StarsProject {
   summary: string;
   technologies: string[];
   imagePlaceholderLabel: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageContain?: boolean;
+  media?: ProjectMedia[];
+}
+
+export interface ProjectMedia {
+  kind: "image" | "video";
+  src: string;
+  alt: string;
 }

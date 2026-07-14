@@ -39,7 +39,7 @@ export function QuickIntroSection() {
         <aside aria-label="About section supporting image" className="md:pt-2">
           <div className="w-full max-w-xs overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50 md:ml-auto">
             <Image
-              src="/images/IMG_0665.jpeg"
+              src="/images/IMG_0642.jpeg"
               alt="Adrian outdoors"
               width={900}
               height={1200}

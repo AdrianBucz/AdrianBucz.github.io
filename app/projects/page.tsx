@@ -1,5 +1,8 @@
+import Image from "next/image";
+
 import { ImagePlaceholder } from "@/components/projects/image-placeholder";
 import { ProjectHeader } from "@/components/projects/project-header";
+import { ProjectMediaGallery } from "@/components/projects/project-media-gallery";
 import { ProjectNavigation } from "@/components/projects/project-navigation";
 import { ProjectSection } from "@/components/projects/project-section";
 import { TechnologyTag } from "@/components/projects/technology-tag";
@@ -7,7 +10,7 @@ import { featuredProjects, projectNavigationItems, starsProjects } from "@/lib/p
 
 export default function ProjectsPage() {
   return (
-    <div className="relative overflow-hidden">
+    <div id="projects-page-top" className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(240,249,255,0.85),_transparent_55%),radial-gradient(circle_at_20%_30%,_rgba(254,249,195,0.55),_transparent_40%)]" />
 
       <div className="mx-auto w-full max-w-7xl px-6 pb-24 pt-12 sm:pt-16 lg:px-10">
@@ -41,6 +44,10 @@ export default function ProjectsPage() {
                 keyAccomplishments={project.keyAccomplishments}
                 technologies={project.technologies}
                 imagePlaceholderLabel={project.imagePlaceholderLabel}
+                imageSrc={project.imageSrc}
+                imageAlt={project.imageAlt}
+                imageContain={project.imageContain}
+                media={project.media}
                 reverse={index % 2 === 1}
               />
             ))}
@@ -77,7 +84,22 @@ export default function ProjectsPage() {
                   >
                     <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:items-start">
                       <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                        <ImagePlaceholder label={project.imagePlaceholderLabel} size="small" />
+                        {project.imageSrc ? (
+                          <div className="overflow-hidden rounded-2xl border border-zinc-300/80 bg-zinc-50 shadow-sm">
+                            <div className="relative aspect-[16/9] w-full">
+                              <Image
+                                src={project.imageSrc}
+                                alt={project.imageAlt ?? project.imagePlaceholderLabel}
+                                fill
+                                unoptimized
+                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                className={project.imageContain ? "object-contain" : "object-cover"}
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <ImagePlaceholder label={project.imagePlaceholderLabel} size="small" />
+                        )}
                       </div>
 
                       <div className={`max-w-3xl ${index % 2 === 1 ? "lg:order-1" : ""}`}>
@@ -95,6 +117,8 @@ export default function ProjectsPage() {
                         </ul>
                       </div>
                     </div>
+
+                    {project.media ? <ProjectMediaGallery items={project.media} /> : null}
                   </article>
                 ))}
               </div>
@@ -102,6 +126,12 @@ export default function ProjectsPage() {
 
             <footer className="border-t border-zinc-300/70 pt-10 text-sm text-zinc-600">
               <p>End of portfolio. Additional implementation details and artifacts are available upon request.</p>
+              <a
+                href="#projects-page-top"
+                className="mt-4 inline-flex rounded-md border border-zinc-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-zinc-700 transition hover:bg-zinc-100"
+              >
+                Return to Top
+              </a>
             </footer>
           </div>
         </div>

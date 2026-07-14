@@ -25,8 +25,8 @@ export function HeroSection() {
             I hold a B.S. in Computer Engineering from Purdue University with a
             passion for designing efficient digital systems. My interests span
             computer architecture, RTL design, hardware-software interface,
-            FPGA development, hardware verification, and high-performance
-            computing. I enjoy solving complex engineering problems and building
+            FPGA development, hardware verification, high-performance
+            computing, and embedded systems. I enjoy solving complex engineering problems and building
             systems that bridge theory and real-world hardware. The purpose of
             this site is to highlight accomplishments I am proud of.
           </p>
